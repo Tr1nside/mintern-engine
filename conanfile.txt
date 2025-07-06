@@ -1,5 +1,5 @@
 [requires]
-glfw/3.4
+glfw/3.3.8
 
 [generators]
 CMakeDeps

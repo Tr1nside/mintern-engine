@@ -8,6 +8,5 @@ target_include_directories(game_main PUBLIC
     include
 )
 
-# Линковка с engine
-find_package(glfw3)
-target_link_libraries(engine glfw)
+# Линковка engine и GLFW
+target_link_libraries(game_main PRIVATE engine)  # Линкуемся с engine
