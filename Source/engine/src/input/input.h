@@ -10,16 +10,15 @@ namespace input {
 class InputSystem {
    public:
     InputSystem(GLFWwindow* window);
-    void update();
-    bool isKeyJustPressed(int glfwKeyCode);
-    static bool isKeyPressed(unsigned int keyCode);
-    static void key_callback(
-        GLFWwindow* window,
-        int key,
-        int scancode,
-        int action,
-        int mods);
+    bool isKeyPressed(unsigned int keyCode) const;
+    bool isMouseButtonPressed(unsigned int buttonCode) const;
+    void getMousePosition(double& x, double& y) const;
 
+
+    static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods); 
+    static void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
+    static void cursor_position_callback(GLFWwindow* window, double xpos, double ypos);
+   
    private:
     GLFWwindow* m_Window;
     bool init();

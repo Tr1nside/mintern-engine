@@ -13,23 +13,17 @@ int main() {
     InputSystem inputSystem(window.getNativeWindow());
 
     while (!window.closed()) {
-        if (inputSystem.isKeyPressed(GLFW_KEY_A)) {
-            std::cout << "PRESSED!" << std::endl;
-        }
-        
-        
-        
-        auto a = -0.5f;
-        auto b = -0.5f;
-        auto c = 0.5f;
-        auto d = 0.5f;
-        
         window.clear();
+        
+        double x, y;
+        inputSystem.getMousePosition(x, y);
+        std::cout << x << ", " << y << std::endl;
+        
         glBegin(GL_QUADS);
-        glVertex2f(a, b);
-        glVertex2f(b, c);
-        glVertex2f(c, d);
-        glVertex2f(d, a);
+        glVertex2f(-0.5f, -0.5f);
+        glVertex2f(-0.5f, 0.5f);
+        glVertex2f(0.5f, 0.5f);
+        glVertex2f(0.5f, -0.5f);
         glEnd();
         window.update();
     }
