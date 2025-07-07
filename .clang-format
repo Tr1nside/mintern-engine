@@ -2,7 +2,7 @@
 BasedOnStyle: Google
 Language: Cpp
 ColumnLimit: 80
-IndentWidth: 2
+IndentWidth: 4
 AllowShortIfStatementsOnASingleLine: false
 AllowShortLoopsOnASingleLine: false
 AlignAfterOpenBracket: AlwaysBreak

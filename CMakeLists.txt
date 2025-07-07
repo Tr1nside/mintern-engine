@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.35)
-project(MyGame VERSION 1.0.0 LANGUAGES CXX)
+project(Mintern VERSION 1.0.0 LANGUAGES CXX)
 
 include(${CMAKE_BINARY_DIR}/conan_toolchain.cmake)
 
