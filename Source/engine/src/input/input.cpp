@@ -70,6 +70,5 @@ void InputSystem::cursor_position_callback(
     m_Y = ypos;
 }
 
-
 }  // namespace input
 }  // namespace mintern

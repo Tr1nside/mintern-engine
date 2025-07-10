@@ -10,6 +10,7 @@ target_include_directories(engine PUBLIC
     include
     src/graphics
     src/input
+    src/math    
 )
 
 # Поиск и линковка GLFW
@@ -17,7 +18,7 @@ find_package(glfw3 REQUIRED)
 target_link_libraries(engine PUBLIC glfw)  # PRIVATE, если только engine использует GLFW
 
 file(GLOB_RECURSE SOURCES "src/*.cpp" "include/*.h")
-file(GLOB_RECURSE MODULES "src/graphics/*.h" "src/input/*.h")
+file(GLOB_RECURSE MODULES "src/graphics/*.h" "src/input/*.h" "src/math/*.h")
 
 # Создание таргета с найденными файлами
 target_sources(engine PUBLIC ${SOURCES} ${MODULES})
