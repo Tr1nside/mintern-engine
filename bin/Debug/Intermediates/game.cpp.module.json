@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "F:\\Code\\00 - Projects\\00 - Pets\\mintern-engine\\bin\\Debug\\Intermediates\\game.obj",
+            "outputs": [
+                "F:\\Code\\00 - Projects\\00 - Pets\\mintern-engine\\bin\\Debug\\Intermediates\\vc143.pdb",
+                "F:\\Code\\00 - Projects\\00 - Pets\\mintern-engine\\bin\\Debug\\Intermediates\\"
+            ],
+            "requires": []
+        }
+    ]
+}

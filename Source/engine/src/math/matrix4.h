@@ -1,9 +1,15 @@
 #pragma once
 
+#include <maths.h>
+
 namespace mintern {
 namespace math {
 struct Mat4 {
-    float elements[4 * 4];
+
+    union {
+        float elements[4 * 4];
+        Vec4 columns[4];
+    };
 
     Mat4();
     Mat4(float diagonal);

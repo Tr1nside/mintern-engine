@@ -4,13 +4,13 @@
 namespace mintern {
 namespace math {
 Mat4::Mat4() {
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 16; i++) {
         elements[i] = 0.0f;
     }
 }
 
 Mat4::Mat4(float diagonal) {
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 16; i++) {
         elements[i] = 0.0f;
     }
 
