@@ -1,6 +1,5 @@
 #include <maths.h>
 
-
 namespace mintern {
 namespace math {
 Mat4::Mat4() {
@@ -119,7 +118,6 @@ Mat4 Mat4::rotation(float angle, const Vec3& axis) {
     result.elements[2 + 2 * 4] = z * z * omc + c;
 
     return result;
-
 }
 Mat4 Mat4::scale(const Vec3& scale) {
     Mat4 result(1.0f);
@@ -130,7 +128,6 @@ Mat4 Mat4::scale(const Vec3& scale) {
 
     return result;
 }
-
 
 }  // namespace math
 }  // namespace mintern

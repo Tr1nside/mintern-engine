@@ -1,5 +1,5 @@
-#include <window.h>
 #include <input.h>
+#include <window.h>
 
 using namespace mintern::graphics;
 
