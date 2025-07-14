@@ -1,7 +1,8 @@
 # Поиск файлов
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "src/*.cpp" "src/*.h")
 file(GLOB_RECURSE HEADERS CONFIGURE_DEPENDS "include/*.h")
-set(ALL_FILES ${SOURCES} ${HEADERS})
+file(GLOB_RECURSE SHADERS CONFIGURE_DEPENDS "src/shaders/*.frag" "src/shaders/*.vert")
+set(ALL_FILES ${SOURCES} ${HEADERS} ${SHADERS})
 
 # Создаем статическую библиотеку engine
 add_library(engine STATIC ${ALL_FILES})

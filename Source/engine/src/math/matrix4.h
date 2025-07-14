@@ -1,11 +1,16 @@
 #pragma once
 
-#include <maths.h>
+#include <vector3.h>
+#include <vector4.h>
 
-namespace mintern {
-namespace math {
-struct Mat4 {
-    union {
+namespace mintern
+{
+namespace math
+{
+struct Mat4
+{
+    union
+    {
         float elements[4 * 4];
         Vec4 columns[4];
     };

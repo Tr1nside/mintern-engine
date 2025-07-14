@@ -1,31 +1,39 @@
-#include <input.h>
 #include <window.h>
+#include <input.h>
 using namespace mintern::input;
 
-namespace mintern {
-namespace graphics {
+namespace mintern
+{
+namespace graphics
+{
 void windowResize(GLFWwindow* window, int width, int height);
 
-Window::Window(const char* title, int width, int height) {
+Window::Window(const char* title, int width, int height)
+{
     m_Title = title;
     m_Width = width;
     m_Height = height;
-    if (!init()) {
+    if (!init())
+    {
         glfwTerminate();
     }
 }
-Window::~Window() {
+Window::~Window()
+{
     glfwTerminate();
 }
 
-bool Window::init() {
-    if (!glfwInit()) {
+bool Window::init()
+{
+    if (!glfwInit())
+    {
         std::cout << "Failed to init GLFW!" << std::endl;
         return false;
     }
 
     m_Window = glfwCreateWindow(m_Width, m_Height, m_Title, NULL, NULL);
-    if (!m_Window) {
+    if (!m_Window)
+    {
         glfwTerminate();
         std::cout << "Filed to create GLFW window!" << std::endl;
         return false;
@@ -37,7 +45,8 @@ bool Window::init() {
     glfwSetMouseButtonCallback(m_Window, InputSystem::mouse_button_callback);
     glfwSetCursorPosCallback(m_Window, InputSystem::cursor_position_callback);
 
-    if (glewInit() != GLEW_OK) {
+    if (glewInit() != GLEW_OK)
+    {
         std::cout << "Could not initialize GLEW!";
         return false;
     }
@@ -45,21 +54,25 @@ bool Window::init() {
     return true;
 }
 
-bool Window::closed() const {
+bool Window::closed() const
+{
     return glfwWindowShouldClose(m_Window);
 }
 
-void Window::clear() const {
+void Window::clear() const
+{
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void Window::update() {
+void Window::update()
+{
     glfwPollEvents();
     // glfwGetFramebufferSize(m_Window, &m_Width, &m_Height);
     glfwSwapBuffers(m_Window);
 }
 
-void windowResize(GLFWwindow* window, int width, int height) {
+void windowResize(GLFWwindow* window, int width, int height)
+{
     glViewport(0, 0, width, height);
 }
 

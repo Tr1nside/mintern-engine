@@ -1,13 +1,17 @@
 #pragma once
 
 #include <GL/glew.h>
+
 #include <GLFW/glfw3.h>
 
 #include <iostream>
 
-namespace mintern {
-namespace graphics {
-class Window {
+namespace mintern
+{
+namespace graphics
+{
+class Window
+{
    private:
     const char* m_Title;
     int m_Width, m_Height;
@@ -22,13 +26,16 @@ class Window {
     void update();
     void clear() const;
 
-    inline GLFWwindow* getNativeWindow() {
+    inline GLFWwindow* getNativeWindow()
+    {
         return m_Window;
     }
-    inline int getWidth() const {
+    inline int getWidth() const
+    {
         return m_Width;
     }
-    inline int getHeight() const {
+    inline int getHeight() const
+    {
         return m_Height;
     }
 };
