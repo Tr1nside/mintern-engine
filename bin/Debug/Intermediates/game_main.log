@@ -1,0 +1,44 @@
+﻿  Building Custom Rule F:/Code/00 - Projects/00 - Pets/mintern-engine/Source/game/CMakeLists.txt
+  Проверка источников на наличие зависимостей модуля…
+  game.cpp
+  Компиляция…
+  game.cpp
+F:\Code\00 - Projects\00 - Pets\mintern-engine\Source\engine\src\math\matrix4.h(10,14): error C3646: columns: неизвестный спецификатор переопределения
+  (компиляция исходного файла "../../../Source/game/src/game.cpp")
+  
+F:\Code\00 - Projects\00 - Pets\mintern-engine\Source\engine\src\math\matrix4.h(10,21): error C2143: синтаксическая ошибка: отсутствие "," перед "["
+  (компиляция исходного файла "../../../Source/game/src/game.cpp")
+  
+F:\Code\00 - Projects\00 - Pets\mintern-engine\Source\engine\src\math\matrix4.h(10,24): error C2238: непредвиденные лексемы перед ";"
+  (компиляция исходного файла "../../../Source/game/src/game.cpp")
+  
+F:\Code\00 - Projects\00 - Pets\mintern-engine\Source\engine\src\math\matrix4.h(32,29): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+  (компиляция исходного файла "../../../Source/game/src/game.cpp")
+  
+F:\Code\00 - Projects\00 - Pets\mintern-engine\Source\engine\src\math\matrix4.h(32,39): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+  (компиляция исходного файла "../../../Source/game/src/game.cpp")
+  
+F:\Code\00 - Projects\00 - Pets\mintern-engine\Source\engine\src\math\matrix4.h(33,39): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+  (компиляция исходного файла "../../../Source/game/src/game.cpp")
+  
+F:\Code\00 - Projects\00 - Pets\mintern-engine\Source\engine\src\math\matrix4.h(33,49): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+  (компиляция исходного файла "../../../Source/game/src/game.cpp")
+  
+F:\Code\00 - Projects\00 - Pets\mintern-engine\Source\engine\src\math\matrix4.h(34,23): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+  (компиляция исходного файла "../../../Source/game/src/game.cpp")
+  
+F:\Code\00 - Projects\00 - Pets\mintern-engine\Source\engine\src\math\matrix4.h(34,33): error C2143: синтаксическая ошибка: отсутствие "," перед "&"
+  (компиляция исходного файла "../../../Source/game/src/game.cpp")
+  
+F:\Code\00 - Projects\00 - Pets\mintern-engine\Source\game\src\game.cpp(28,27): error C2664: "mintern::math::Mat4 mintern::math::Mat4::translation(const int)": невозможно преобразовать аргумент 1 из "mintern::math::Vec3" в "const int"
+      F:\Code\00 - Projects\00 - Pets\mintern-engine\Source\game\src\game.cpp(28,43):
+      Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+      F:\Code\00 - Projects\00 - Pets\mintern-engine\Source\engine\src\math\matrix4.h(32,17):
+       см. объявление "mintern::math::Mat4::translation"
+      F:\Code\00 - Projects\00 - Pets\mintern-engine\Source\game\src\game.cpp(28,27):
+      при попытке сопоставить список аргументов "(mintern::math::Vec3)"
+  
+F:\Code\00 - Projects\00 - Pets\mintern-engine\Source\game\src\game.cpp(30,28): error C2039: "columns": не является членом "mintern::math::Mat4".
+      F:\Code\00 - Projects\00 - Pets\mintern-engine\Source\engine\src\math\matrix4.h(7,8):
+       см. объявление "mintern::math::Mat4"
+  

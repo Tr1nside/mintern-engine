@@ -1,0 +1,10 @@
+^F:\CODE\00 - PROJECTS\00 - PETS\MINTERN-ENGINE\SOURCE\GAME\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SF:/Code/00 - Projects/00 - Pets/mintern-engine" "-BF:/Code/00 - Projects/00 - Pets/mintern-engine/build" --check-stamp-file "F:/Code/00 - Projects/00 - Pets/mintern-engine/build/Source/game/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
