@@ -1,5 +1,7 @@
 #include <window.h>
+
 #include <input.h>
+
 using namespace mintern::input;
 
 namespace mintern
@@ -66,6 +68,12 @@ void Window::clear() const
 
 void Window::update()
 {
+    GLenum error = glGetError();
+    if (error != GL_NO_ERROR)
+    {
+        std::cout << "Opengl error: " << error << std::endl;
+    }
+
     glfwPollEvents();
     // glfwGetFramebufferSize(m_Window, &m_Width, &m_Height);
     glfwSwapBuffers(m_Window);

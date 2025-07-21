@@ -5,7 +5,7 @@ namespace mintern
 namespace graphics
 {
 
-//Construction & Destruction
+// Construction & Destruction
 Shader::Shader(const char* vertPath, const char* fragPath)
     : m_VertPath(vertPath), m_FragPath(fragPath)
 {
@@ -17,8 +17,7 @@ Shader::~Shader()
     glDeleteProgram(m_ShaderID);
 }
 
-
-//load
+// load
 GLuint Shader::load()
 {
     GLuint program = glCreateProgram();
@@ -75,7 +74,6 @@ GLuint Shader::load()
     return program;
 }
 
-
 // Enable & disable
 void Shader::enable() const
 {
@@ -86,7 +84,6 @@ void Shader::disable() const
 {
     glUseProgram(0);
 }
-
 
 // Set uniform
 GLint Shader::getUniformLocation(const GLchar* name)
@@ -116,18 +113,14 @@ void Shader::setUniform3f(const GLchar* name, const math::Vec3& vector)
 
 void Shader::setUniform4f(const GLchar* name, const math::Vec4& vector)
 {
-    glUniform4f(getUniformLocation(name), vector.x, vector.y, vector.z, vector.w);
+    glUniform4f(
+        getUniformLocation(name), vector.x, vector.y, vector.z, vector.w);
 }
 
 void Shader::setUniformMat4(const GLchar* name, const math::Mat4& matrix)
 {
-    glUniformMatrix4fv(
-        getUniformLocation(name),
-        1,
-        GL_FALSE,
-        matrix.elements);
+    glUniformMatrix4fv(getUniformLocation(name), 1, GL_FALSE, matrix.elements);
 }
-
 
 }  // namespace graphics
 }  // namespace mintern

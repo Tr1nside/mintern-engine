@@ -3,9 +3,9 @@
 #include <GL/glew.h>
 #include <fileutils.h>
 
+#include <maths.h>
 #include <iostream>
 #include <vector>
-#include <maths.h>
 
 namespace mintern
 {
@@ -15,7 +15,6 @@ namespace graphics
 class Shader
 {
    private:
-
     const char *m_VertPath, *m_FragPath;
 
     GLuint load();
@@ -36,7 +35,6 @@ class Shader
     void setUniform3f(const GLchar* name, const math::Vec3& vector);
     void setUniform4f(const GLchar* name, const math::Vec4& vector);
     void setUniformMat4(const GLchar* name, const math::Mat4& matrix);
-
 };
 
 }  // namespace graphics

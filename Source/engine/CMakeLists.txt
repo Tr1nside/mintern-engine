@@ -11,9 +11,10 @@ add_library(engine STATIC ${ALL_FILES})
 target_include_directories(engine PUBLIC
     include
     src/graphics
+    src/graphics/render
     src/input
     src/math
-    src/utils
+    src/utils 
 )
 
 # Поиск и линковка GLFW
