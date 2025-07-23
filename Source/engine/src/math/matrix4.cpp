@@ -32,6 +32,7 @@ Mat4 Mat4::identity()
 
 Mat4& Mat4::multiply(const Mat4& other)
 {
+    float data[16];
     for (int row = 0; row < 4; row++)
     {
         for (int col = 0; col < 4; col++)
@@ -42,9 +43,11 @@ Mat4& Mat4::multiply(const Mat4& other)
                 sum += elements[col + e * 4] * other.elements[e + row * 4];
             }
 
-            elements[col + row * 4] = sum;
+            data[col + row * 4] = sum;
         }
     }
+    memcpy(elements, data, 4 * 4 * sizeof(float));
+
     return *this;
 }
 

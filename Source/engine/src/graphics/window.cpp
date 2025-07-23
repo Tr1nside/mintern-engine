@@ -46,6 +46,7 @@ bool Window::init()
     glfwSetKeyCallback(m_Window, InputSystem::key_callback);
     glfwSetMouseButtonCallback(m_Window, InputSystem::mouse_button_callback);
     glfwSetCursorPosCallback(m_Window, InputSystem::cursor_position_callback);
+    glfwSwapInterval(0.0);
 
     if (glewInit() != GLEW_OK)
     {

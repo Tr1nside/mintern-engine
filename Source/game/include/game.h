@@ -16,6 +16,7 @@
 #include <maths.h>
 
 #include <fileutils.h>
+#include <timer.h>
 
 #include <GLFW/glfw3.h>
 

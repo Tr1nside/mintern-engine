@@ -15,7 +15,8 @@ namespace graphics
 struct VertexData
 {
     math::Vec3 vertex;
-    math::Vec4 color;
+    //math::Vec4 color;
+    unsigned int color;
 };
 
 class Renderable2D
