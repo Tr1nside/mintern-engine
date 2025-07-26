@@ -1,6 +1,7 @@
 build/
 automation/
 configurates/
+Intermediates/
 
 CMakeLists.txt.user
 CMakeCache.txt

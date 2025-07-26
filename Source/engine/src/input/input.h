@@ -1,13 +1,16 @@
 #pragma once
 #include <GLFW/glfw3.h>
 
-namespace mintern {
-namespace input {
+namespace mintern
+{
+namespace input
+{
 
 #define MAX_KEYS 1024
 #define MAX_BUTTONS 32
 
-class InputSystem {
+class InputSystem
+{
    public:
     InputSystem(GLFWwindow* window);
     bool isKeyPressed(unsigned int keyCode) const;

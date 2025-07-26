@@ -19,14 +19,14 @@ AlwaysBreakBeforeMultilineStrings: true
 BinPackArguments: false
 BinPackParameters: false
 BreakBeforeBinaryOperators: NonAssignment
-BreakBeforeBraces: Attach
+BreakBeforeBraces: Allman
 BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: BeforeComma
-CompactNamespaces: false
+CompactNamespaces: true
 ConstructorInitializerIndentWidth: 4
 DerivePointerAlignment: false
 FixNamespaceComments: true
-IncludeBlocks: Regroup
+IncludeBlocks: Preserve
 IncludeCategories:
   - Regex:           '^<ext/.*\.h>'
     Priority:        2

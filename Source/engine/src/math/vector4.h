@@ -2,9 +2,12 @@
 
 #include <iostream>
 
-namespace mintern {
-namespace math {
-struct Vec4 {
+namespace mintern
+{
+namespace math
+{
+struct Vec4
+{
     float x, y, z, w;
 
     Vec4();

@@ -1,9 +1,19 @@
 #pragma once
 
-namespace mintern {
-namespace math {
-struct Mat4 {
-    float elements[4 * 4];
+#include <math/vector3.h>
+#include <math/vector4.h>
+
+namespace mintern
+{
+namespace math
+{
+struct Mat4
+{
+    union
+    {
+        float elements[4 * 4];
+        Vec4 columns[4];
+    };
 
     Mat4();
     Mat4(float diagonal);
@@ -21,7 +31,8 @@ struct Mat4 {
         float top,
         float near,
         float far);
-    static Mat4 perspective(float fov, float aspectRatio, float near, float far);
+    static Mat4
+    perspective(float fov, float aspectRatio, float near, float far);
 
     static Mat4 translation(const Vec3& translation);
     static Mat4 rotation(float angle, const Vec3& axis);
