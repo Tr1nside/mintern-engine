@@ -1,4 +1,4 @@
-#include <sprite.h>
+#include <graphics/render/sprite.h>
 
 namespace mintern
 {

@@ -4,7 +4,7 @@
 
 #include <vector>
 
-#include <buffers/buffer.h>
+#include <graphics/buffers/buffer.h>
 
 namespace mintern
 {

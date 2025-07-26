@@ -1,6 +1,6 @@
-#include <window.h>
+#include <graphics/window.h>
 
-#include <input.h>
+#include <input/input.h>
 
 using namespace mintern::input;
 

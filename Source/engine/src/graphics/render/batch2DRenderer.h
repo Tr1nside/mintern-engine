@@ -1,8 +1,8 @@
 #pragma once
 
 #include <cstddef>
-#include <renderer2d.h>
-#include <buffers/indexBuffer.h>
+#include <graphics/render/renderer2d.h>
+#include <graphics/buffers/indexBuffer.h>
 
 namespace mintern
 {
@@ -31,9 +31,9 @@ class BatchRenderer2D : public Renderer2D
    public:
     BatchRenderer2D();
     ~BatchRenderer2D();
-    void begin();
+    void begin() override;
     void submit(const Renderable2D* renderable) override;
-    void end();
+    void end() override;
     void flush() override;
 
    private:

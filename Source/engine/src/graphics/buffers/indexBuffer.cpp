@@ -1,4 +1,4 @@
-#include <buffers/indexBuffer.h>
+#include <graphics/buffers/indexBuffer.h>
 
 namespace mintern
 {

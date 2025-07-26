@@ -1,20 +1,14 @@
 # Поиск файлов
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "src/*.cpp" "src/*.h")
-file(GLOB_RECURSE HEADERS CONFIGURE_DEPENDS "include/*.h")
 file(GLOB_RECURSE SHADERS CONFIGURE_DEPENDS "src/shaders/*.frag" "src/shaders/*.vert")
-set(ALL_FILES ${SOURCES} ${HEADERS} ${SHADERS})
+set(ALL_FILES ${SOURCES} ${SHADERS})
 
 # Создаем статическую библиотеку engine
 add_library(engine STATIC ${ALL_FILES})
 
 # Публичные заголовки
 target_include_directories(engine PUBLIC
-    include
-    src/graphics
-    src/graphics/render
-    src/input
-    src/math
-    src/utils 
+    src 
 )
 
 # Поиск и линковка GLFW

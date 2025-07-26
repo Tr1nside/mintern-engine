@@ -1,4 +1,4 @@
-#include <buffers/vertexArray.h>
+#include <graphics/buffers/vertexArray.h>
 
 namespace mintern
 {

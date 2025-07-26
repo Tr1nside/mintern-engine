@@ -1,4 +1,4 @@
-#include <maths.h>
+#include <math/maths.h>
 
 namespace mintern
 {

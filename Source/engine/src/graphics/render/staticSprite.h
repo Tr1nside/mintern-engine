@@ -1,6 +1,6 @@
 #pragma once
 
-#include <renderer2d.h>
+#include <graphics/render/renderer2d.h>
 
 namespace mintern
 {

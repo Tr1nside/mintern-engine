@@ -1,7 +1,7 @@
 #pragma once
 
-#include <vector3.h>
-#include <vector4.h>
+#include <math/vector3.h>
+#include <math/vector4.h>
 
 namespace mintern
 {

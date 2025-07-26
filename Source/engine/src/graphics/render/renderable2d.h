@@ -1,11 +1,11 @@
 #pragma once
 
-#include <buffers/buffer.h>
-#include <buffers/indexBuffer.h>
-#include <buffers/vertexArray.h>
+#include <graphics/buffers/buffer.h>
+#include <graphics/buffers/indexBuffer.h>
+#include <graphics/buffers/vertexArray.h>
 
-#include <maths.h>
-#include <shader.h>
+#include <math/maths.h>
+#include <graphics/shader.h>
 
 namespace mintern
 {

@@ -1,9 +1,9 @@
 #pragma once
 
 #include <GL/glew.h>
-#include <fileutils.h>
+#include <utils/fileutils.h>
 
-#include <maths.h>
+#include <math/maths.h>
 #include <iostream>
 #include <vector>
 

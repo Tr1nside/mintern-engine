@@ -19,42 +19,33 @@ int main()
     Mat4 ortho = Mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f);
 
 
-    Shader shader(
+
+    Shader* s = new Shader(
         "../../../Source/engine/src/shaders/basic.vert",
         "../../../Source/engine/src/shaders/basic.frag");
+    Shader* s2 = new Shader(
+        "../../../Source/engine/src/shaders/basic.vert",
+        "../../../Source/engine/src/shaders/basic.frag");
+    Shader& shader = *s;
+    Shader& shader2 = *s2;
+    
     shader.enable();
-    shader.setUniformMat4("pr_matrix", ortho);
+    shader2.enable();
+    shader.setUniform2f("light_pos", Vec2(2.0f, 2.0f));
+    shader2.setUniform2f("light_pos", Vec2(2.0f, 2.0f));
 
-    std::vector<Renderable2D*> sprites;
 
-
-    for (float y = 0; y < 9.0f; y+=0.05f)
+    TileLayer layer(&shader);
+    for (float y = -9.0f; y < 9.0f; y += 0.1)
     {
-        for (float j = 0; j < 16.0f; j+=0.05f)
+        for (float x = -16.0f; x < 16.0f; x += 0.1)
         {
-            sprites.push_back(new 
-#if BATCH_RENDERER                
-                Sprite
-#else
-                StaticSprite
-#endif
-                (j, y, 0.04f, 0.04f, Vec4(rand() % 1000 / 1000.f, rand() % 1000 / 1000.f, 1, 1)
-#if !BATCH_RENDERER  
-                , shader
-#endif
-                    ));
+            layer.add(new Sprite(x, y, 0.08f, 0.08f, Vec4(rand() % 1000 / 1000.0f, rand() % 1000 / 1000.0f, 1, 1)));
         }
     }
-
-#if BATCH_RENDERER
-    BatchRenderer2D renderer;
-#else
-    Simple2DRenderer renderer;
-#endif
-
-    shader.setUniform2f("light_pos", Vec2(2.0f, 2.0f));
-    shader.setUniform4f("colour", Vec4(0.2f, 0.3f, 0.8f, 1.0f));
-
+    
+    TileLayer layer2(&shader2);
+    layer2.add(new Sprite(-2, -2, 4, 4, Vec4(1, 0, 1, 1)));
 
     Timer time;
     float timer = 0;
@@ -62,40 +53,28 @@ int main()
     float t = 0;
 
     while (!window.closed())
-    {
-
-        Mat4 mat = Mat4::translation(Vec3(5, 5, 5));
-        mat = mat * Mat4::rotation(time.elapsed() * 100.0f, Vec3(0,0,1));
-        mat = mat * Mat4::translation(Vec3(-5, -5, -5));
-
-        shader.setUniformMat4("ml_matrix", mat);
-        
+    {   
         window.clear();
 
         // light shader on mouse position
         double x, y;
         input.getMousePosition(x, y);
-
+        shader.enable();
         shader.setUniform2f(
             "light_pos",
             Vec2(
-                (float)(x * 16.0f / 1920.0f),
-                (float)(9.0f - y * 9.0f / 1080.0f)));
+                (float)(x * 32.0f / 1920.0f - 16.0f),
+                (float)(9.0f - y * 18.0f / 1080.0f)));
+        shader2.enable();
+        shader2.setUniform2f(
+            "light_pos",
+            Vec2(
+                (float)(x * 32.0f / 1920.0f - 16.0f),
+                (float)(9.0f - y * 18.0f / 1080.0f)));
 
+        layer.render();
+        layer2.render();
 
-        // render
-#if BATCH_RENDERER
-        renderer.begin();
-#endif
-        for (int i = 0; i < sprites.size(); i++)
-        {
-            renderer.submit(sprites[i]);
-        }
-#if BATCH_RENDERER
-        renderer.end();
-#endif
-
-        renderer.flush();
         window.update();
         
         frames++;
@@ -105,7 +84,6 @@ int main()
             printf("%d fps\n", frames);
             frames = 0;
         }
-        //printf("%f ms\n", timer.elapsed() * 1000.0);
     }
 
     glfwTerminate();
